@@ -1,0 +1,274 @@
+/* ==UserStyle==
+@name           WhatsApp Web Tokyo Night Ultra Dark
+@namespace      github.com/tokyonight/userstyles/whatsapp-web
+@version        1.0.0
+@description    Tokyo Night Ultra Dark High Contrast theme for WhatsApp Web
+@author         You
+@license        MIT
+@preprocessor   less
+@var checkbox   lighterMessages "Elevated incoming messages" 0
+==/UserStyle== */
+
+@-moz-document domain("web.whatsapp.com") {
+
+/* Tokyo Night Ultra Dark High Contrast Palette */
+@tn-crust:     #0F0F14;
+@tn-mantle:    #1F202E;
+@tn-base:      #13141F;
+@tn-surface0:  #2A2B3D;
+@tn-surface1:  #343A52;
+@tn-surface2:  #444B6A;
+@tn-overlay0:  #2A2B3D;
+@tn-overlay1:  #343A52;
+@tn-overlay2:  #444B6A;
+@tn-subtext0:  #565F89;
+@tn-subtext1:  #787C99;
+@tn-text:      #C0CAF5;
+@tn-red:       #FF7A93;
+@tn-orange:    #FF9E64;
+@tn-yellow:    #FFD173;
+@tn-green:     #9ECE6A;
+@tn-teal:      #7FFFD4;
+@tn-sky:       #7DCFFF;
+@tn-crust:     #7DCFFF;
+@tn-sapphire:  #7AA2F7;
+@tn-blue:      #89DDFF;
+@tn-mauve:     #C099FF;
+@tn-lavender:  #C099FF;
+@tn-pink:      #FF7A93;
+@tn-maroon:    #D18616;
+@tn-flamingo:  #F7768E;
+@tn-accent:    #89DDFF;
+@tn-accent-content: #0F0F14;
+
+/* Note: Some variables appear to be applied on :root,
+but without using :has there doesn't seem to be a good
+way to target the root whenever a certain theme is applied.
+*/
+:root:has(> :not(.dark)),
+:root .color-refresh,
+.color-refresh,
+/* Layer under mount */
+.app-wrapper-web.app-wrapper-web,
+.app-wrapper-web.app-wrapper-web:root {
+  #tokyo-night-light();
+}
+
+:root:has(> .dark),
+.dark.color-refresh,
+.color-refresh.dark,
+/* Layer under mount */
+.dark .app-wrapper-web.app-wrapper-web,
+.dark .app-wrapper-web.app-wrapper-web:root {
+  #tokyo-night-dark();
+}
+
+#initialLoad(@styles) {
+  #RGB(splashscreen-startup-background, @styles[@tn-crust]) !important;
+  #RGB(splashscreen-startup-icon, @styles[@tn-surface0]) !important;
+  #RGB(splashscreen-primary-title, @styles[@tn-text]) !important;
+  #RGB(splashscreen-progress-primary, @styles[@tn-accent]) !important;
+  #RGB(splashscreen-progress-background, @styles[@tn-surface1]) !important;
+  #RGB(splashscreen-secondary-lighter, @styles[@tn-overlay2]) !important;
+  #RGB(startup-icon, @styles[@tn-surface1]) !important;
+  #RGB(startup-background, @styles[@tn-crust]) !important;
+  #RGB(progress-background, @styles[@tn-overlay0]) !important;
+}
+
+// Initial loading screen (Avoid FOUC)
+[style^="--splashscreen-startup-background: #F7F5F3;"] {
+  #initialLoad(#tokyo-night-light());
+}
+
+[style^="--splashscreen-startup-background: #0A1014;"] {
+  #initialLoad(#tokyo-night-dark());
+}
+
+#tokyo-night-dark() {
+  @emphasize: 10%;
+  @deemphasize: 30%;
+  @bubble-surface-deemp: 20%;
+  @scrim: 30%;
+  @pressed: 20%;
+
+  #WDS(accent, @tn-accent);
+  #WDS(accent-deemphasized, fade(@tn-accent, @deemphasize));
+  #WDS(accent-emphasized, lighten(@tn-accent, @emphasize));
+
+  #WDS(secondary-negative, @tn-red);
+  #WDS(secondary-negative-deemphasized, fade(@tn-red, @deemphasize));
+  #WDS(secondary-negative-emphasized, @tn-red);
+
+  #WDS(secondary-positive, @tn-green);
+  #WDS(secondary-positive-deemphasized, fade(@tn-green, @deemphasize));
+
+  #WDS(secondary-warning, @tn-yellow);
+  #WDS(secondary-warning-deemphasized, fade(@tn-yellow, @deemphasize));
+
+  #WDS(content-default, @tn-text);
+  #WDS(content-deemphasized, @tn-overlay2);
+  #WDS(content-disabled, fade(@tn-text, 50%));
+
+  #WDS(content-on-accent, @tn-accent-content);
+  #WDS(content-action-default, @tn-accent);
+  #WDS(content-action-emphasized, lighten(@tn-accent, @emphasize));
+  #WDS(content-external-link, @tn-blue);
+  #WDS(content-inverse, @tn-crust);
+  #WDS(content-read, @tn-blue);
+
+  #WDS(background-wash-inset, @tn-crust);
+  #WDS(background-wash-plain, @tn-crust);
+  #WDS(background-elevated-wash-plain, @tn-crust);
+  #WDS(background-elevated-wash-inset, @tn-crust);
+  #WDS(background-dimmer, fade(#000, @scrim));
+  #WDS(modal-backdrop-solid, @tn-crust);
+
+  #WDS(surface-default, @tn-mantle);
+  #WDS(surface-emphasized, @tn-base);
+  #WDS(surface-elevated-default, @tn-base);
+  #WDS(surface-elevated-emphasized, mix(@tn-text, @tn-base, @emphasize));
+  #WDS(surface-highlight, fade(@tn-text, @pressed));
+  #WDS(surface-inverse, @tn-text);
+  #WDS(surface-pressed, fade(@tn-text, @pressed));
+
+  #WDS(lines-divider, fade(@tn-text, 10%));
+  #WDS(lines-outline-default, @tn-overlay0);
+  #WDS(lines-outline-deemphasized, fade(@tn-text, @deemphasize));
+
+  #WDS(persistent-activity-indicator, fade(@tn-green, 90%));
+  #WDS(persistent-always-black, #000);
+  #WDS(persistent-always-white, #fff);
+  #WDS(persistent-always-branded, @tn-accent);
+
+  #WDS(
+    systems-bubble-surface-incoming,
+    if(@lighterMessages = 1, @tn-surface1, @tn-base),
+  );
+
+  #WDS(
+    systems-bubble-surface-outgoing,
+    mix(@tn-accent, @tn-base, @bubble-surface-deemp),
+  );
+  #WDS(systems-bubble-content-deemphasized, fade(@tn-text, 50%));
+
+  #WDS(systems-bubble-surface-overlay, @tn-mantle);
+  #WDS(systems-bubble-surface-system, @tn-mantle);
+
+  #WDS(
+    systems-bubble-surface-e2e,
+    mix(@tn-yellow, @tn-mantle, @bubble-surface-deemp),
+  );
+  #WDS(systems-bubble-content-e2e, @tn-yellow);
+
+  #WDS(
+    systems-bubble-surface-business,
+    mix(@tn-teal, @tn-mantle, @bubble-surface-deemp),
+  );
+
+  #WDS(systems-chat-surface-composer, @tn-base);
+  #WDS(systems-chat-background-wallpaper, @tn-crust);
+  #WDS(systems-chat-foreground-wallpaper, @tn-mantle);
+  #WDS(systems-chat-surface-tray, @tn-base);
+  #WDS(systems-status-seen, fade(@tn-text, 50%));
+
+  #WDS(components-platform-gesture-bar, fade(@tn-crust, 50%));
+  #WDS(components-platform-status-bar, fade(@tn-crust, 80%));
+  #WDS(components-surface-nav-bar, @tn-base);
+
+  #WDS(app-wash, @tn-surface0);
+
+  #WDS(white, @tn-crust);
+  #RGB(white, @tn-crust);
+
+  #RGB(attachment-type-stickers-color, @tn-green);
+  #RGB(attachment-type-polls-color, @tn-yellow);
+  #RGB(attachment-type-contacts-color, @tn-sky);
+  #RGB(attachment-type-camera-color, @tn-pink);
+  #RGB(attachment-type-photos-color, @tn-blue);
+  #RGB(attachment-type-documents-color, @tn-mauve);
+  #RGB(attachment-type-audio-color, @tn-orange);
+  #RGB(attachment-type-event-color, @tn-pink);
+
+  #RGB(toast-background, @tn-surface1);
+  #RGB(toast-text, @tn-text);
+
+  #RGB(picker-background, @tn-surface1);
+
+  #RGB(butterbar-blue-nux-background, @tn-sky);
+  #RGB(butterbar-blue-nux-icon-background, darken(@tn-sky, 30%));
+  #RGB(blue-light, @tn-blue);
+
+  #RGB(gray-500, @tn-overlay2);
+
+  #RGB(focus-animation, mix(@tn-accent, @tn-base, 40%));
+  #RGB(focus-animation-deeper, mix(@tn-accent, @tn-base, 30%));
+
+  #RGB(startup-icon, @tn-surface1);
+  #RGB(startup-background, @tn-crust);
+
+  #RGB(progress-background, @tn-surface0);
+
+  /* "About AI messages" icon */
+  .st0 {
+    fill: @tn-accent !important;
+    stroke: @tn-surface0;
+  }
+
+  input[type="time"]::-webkit-datetime-edit-hour-field:focus,
+  input[type="time"]::-webkit-datetime-edit-minute-field:focus,
+  input[type="time"]::-webkit-datetime-edit-second-field:focus,
+  input[type="time"]::-webkit-datetime-edit-ampm-field:focus,
+  input[type="date"]::-webkit-datetime-edit-year-field:focus,
+  input[type="date"]::-webkit-datetime-edit-month-field:focus,
+  input[type="date"]::-webkit-datetime-edit-day-field:focus {
+    background-color: @tn-accent;
+    color: @tn-accent-content;
+  }
+
+  [data-icon="wa-wordmark-refreshed"] path {
+    fill: var(--WDS-persistent-always-branded);
+  }
+
+  /* Toasts */
+  #wa-popovers-bucket
+    + span
+    > div
+    button:nth-of-type(1):not(:has(> [data-icon="x-alt"])) {
+    color: var(--WDS-accent-emphasized);
+  }
+
+  /* Date picker */
+  #RGB(date-picker-text-color, @tn-text);
+  .react-calendar__tile:disabled {
+    color: @tn-subtext0;
+  }
+  .react-calendar__month-view__days__day--neighboringMonth {
+    color: @tn-overlay2;
+  }
+}
+
+#tokyo-night-light() {
+  // Same as dark for consistency (WhatsApp Web light mode is rarely used)
+  #tokyo-night-dark();
+}
+
+#WDS(@id, @color) {
+  --WDS-@{id}: @color;
+  --WDS-@{id}-RGB: #lib-rgbify(@color)[];
+  --WDS-@{id}-rgb: #lib-rgbify(@color)[];
+}
+
+#RGB(@id, @color) {
+  --@{id}: @color;
+  --@{id}-rgb: #lib-rgbify(@color)[];
+}
+
+// Helper function to convert hex to RGB
+#lib-rgbify(@color) {
+  @r: red(@color);
+  @g: green(@color);
+  @b: blue(@color);
+  @result: @r, @g, @b;
+}
+
+}

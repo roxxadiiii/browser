@@ -1,0 +1,214 @@
+# Tokyo Night Ultra Dark High Contrast Color Palette
+# Based on Base16 Tokyo Night Storm with enhanced contrast
+# Generated for cross-application theming
+
+metadata:
+  name: "Tokyo Night Ultra Dark High Contrast"
+  version: "1.0.0"
+  author: "Custom"
+  license: "MIT"
+  description: "High contrast dark theme based on Tokyo Night Storm"
+  base_theme: "Tokyo Night Storm"
+  modifications:
+    - "Darkened background for reduced eye strain"
+    - "Brightened foreground for better readability"
+    - "Enhanced accent colors for visibility"
+
+colors:
+  base:
+    base00:
+      hex: "#13141F"
+      purpose: "Background"
+      change: "Much Darker (from #24283B)"
+    base01:
+      hex: "#1F202E"
+      purpose: "Selection Background"
+      change: "Darker (from #1A1B26)"
+    base02:
+      hex: "#2A2B3D"
+      purpose: "Status Bar"
+      change: "Darker (from #343A52)"
+    base03:
+      hex: "#565F89"
+      purpose: "Comments"
+      change: "Brighter (from #444B6A)"
+    base04:
+      hex: "#787C99"
+      purpose: "Caret"
+      change: "Same"
+    base05:
+      hex: "#C0CAF5"
+      purpose: "Foreground"
+      change: "Much Brighter (from #787C99)"
+    base06:
+      hex: "#D5D6DB"
+      purpose: "Light Foreground"
+      change: "Brighter (from #CBCCD1)"
+    base07:
+      hex: "#FFFFFF"
+      purpose: "Bright Foreground"
+      change: "Pure White (from #D5D6DB)"
+
+  accent:
+    base08:
+      hex: "#FF7A93"
+      purpose: "Red (Errors/Keywords)"
+      change: "More Vibrant (from #F7768E)"
+    base09:
+      hex: "#FF9E64"
+      purpose: "Orange (Warnings/Numbers)"
+      change: "Same"
+    base0A:
+      hex: "#FFD173"
+      purpose: "Yellow (Strings/Tags)"
+      change: "Brighter (from #E0AF68)"
+    base0B:
+      hex: "#9ECE6A"
+      purpose: "Green (Success/Functions)"
+      change: "Much Brighter (from #41A6B5)"
+    base0C:
+      hex: "#7FFFD4"
+      purpose: "Cyan (Variables/Properties)"
+      change: "Brighter (from #7DCFFF)"
+    base0D:
+      hex: "#89DDFF"
+      purpose: "Blue (Links/Operators)"
+      change: "Brighter (from #7AA2F7)"
+    base0E:
+      hex: "#C099FF"
+      purpose: "Purple (Keywords/Control)"
+      change: "Brighter (from #BB9AF7)"
+    base0F:
+      hex: "#FF9E64"
+      purpose: "Brown/Deprecated"
+      change: "Brighter (from #D18616)"
+
+# Quick reference for common applications
+applications:
+  kitty:
+    background: "#13141F"
+    foreground: "#C0CAF5"
+    cursor: "#C0CAF5"
+    selection_background: "#1F202E"
+    selection_foreground: "#C0CAF5"
+    colors:
+      - "#13141F"
+      - "#FF7A93"
+      - "#9ECE6A"
+      - "#FFD173"
+      - "#89DDFF"
+      - "#C099FF"
+      - "#7FFFD4"
+      - "#C0CAF5"
+      - "#565F89"
+      - "#FF7A93"
+      - "#9ECE6A"
+      - "#FFD173"
+      - "#89DDFF"
+      - "#C099FF"
+      - "#7FFFD4"
+      - "#FFFFFF"
+
+  fish:
+    normal: "#C0CAF5"
+    command: "#89DDFF"
+    param: "#7FFFD4"
+    string: "#9ECE6A"
+    number: "#FFD173"
+    error: "#FF7A93"
+    cwd: "#FFD173"
+    comment: "#565F89"
+    autosuggestion: "#565F89"
+
+  css_variables: |
+    :root {
+      --tn-bg-dark: #13141F;
+      --tn-bg-light: #1F202E;
+      --tn-bg-elevated: #2A2B3D;
+      --tn-fg-main: #C0CAF5;
+      --tn-fg-dim: #565F89;
+      --tn-accent-red: #FF7A93;
+      --tn-accent-orange: #FF9E64;
+      --tn-accent-yellow: #FFD173;
+      --tn-accent-green: #9ECE6A;
+      --tn-accent-cyan: #7FFFD4;
+      --tn-accent-blue: #89DDFF;
+      --tn-accent-purple: #C099FF;
+      --tn-accent-white: #FFFFFF;
+    }
+
+  json:
+    background: "#13141F"
+    foreground: "#C0CAF5"
+    red: "#FF7A93"
+    orange: "#FF9E64"
+    yellow: "#FFD173"
+    green: "#9ECE6A"
+    cyan: "#7FFFD4"
+    blue: "#89DDFF"
+    purple: "#C099FF"
+    white: "#FFFFFF"
+
+# Usage examples
+examples:
+  vim: |
+    let g:colors_name = 'tokyo-night-hc'
+    highlight Normal guibg=#13141F guifg=#C0CAF5
+    highlight Comment guifg=#565F89
+    highlight String guifg=#9ECE6A
+    highlight Number guifg=#FFD173
+    highlight Error guifg=#FF7A93
+
+  neovim_lua: |
+    vim.g.colors_name = 'tokyo-night-hc'
+    vim.api.nvim_set_hl(0, 'Normal', { bg = '#13141F', fg = '#C0CAF5' })
+    vim.api.nvim_set_hl(0, 'Comment', { fg = '#565F89' })
+    vim.api.nvim_set_hl(0, 'String', { fg = '#9ECE6A' })
+
+  alacritty: |
+    colors:
+      primary:
+        background: '#13141F'
+        foreground: '#C0CAF5'
+      cursor:
+        text: '#13141F'
+        cursor: '#C0CAF5'
+      normal:
+        black: '#13141F'
+        red: '#FF7A93'
+        green: '#9ECE6A'
+        yellow: '#FFD173'
+        blue: '#89DDFF'
+        magenta: '#C099FF'
+        cyan: '#7FFFD4'
+        white: '#C0CAF5'
+      bright:
+        black: '#565F89'
+        red: '#FF7A93'
+        green: '#9ECE6A'
+        yellow: '#FFD173'
+        blue: '#89DDFF'
+        magenta: '#C099FF'
+        cyan: '#7FFFD4'
+        white: '#FFFFFF'
+
+  wezterm: |
+    return {
+      colors = {
+        foreground = '#C0CAF5',
+        background = '#13141F',
+        cursor_bg = '#C0CAF5',
+        cursor_border = '#C0CAF5',
+        cursor_fg = '#13141F',
+        selection_bg = '#1F202E',
+        selection_fg = '#C0CAF5',
+        ansi = {
+          '#13141F', '#FF7A93', '#9ECE6A', '#FFD173',
+          '#89DDFF', '#C099FF', '#7FFFD4', '#C0CAF5'
+        },
+        brights = {
+          '#565F89', '#FF7A93', '#9ECE6A', '#FFD173',
+          '#89DDFF', '#C099FF', '#7FFFD4', '#FFFFFF'
+        }
+      }
+    }

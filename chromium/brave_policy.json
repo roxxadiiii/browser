@@ -1,0 +1,24 @@
+{
+    "TorDisabled": 1,
+    "BraveRewardsDisabled": 1,
+    "BraveWalletDisabled": 1,
+    "BraveVPNDisabled": 1,
+    "BraveAIChatEnabled": 0,
+    "BraveNewsDisabled": 1,
+    "BraveTalkDisabled": 1,
+    "BraveSpeedreaderEnabled": 0,
+    "BraveWaybackMachineEnabled": 0,
+    "BraveP3AEnabled": 0,
+    "BraveStatsPingEnabled": 0,
+    "BraveWebDiscoveryEnabled" 0,
+    "NewTabPageLocation": "https://www.google.com/"
+    "ExtensionInstallForcelist": [
+      "eimadpbcbfnmbkopoojfekhnkhdbieeh;https://clients2.google.com/service/update2/crx",
+      "edibdbjcniadpccecjdfdjjppcpchdlm;https://clients2.google.com/service/update2/crx",
+      "ekcgkejcjdcmonfpmnljobemcbpnkamh;https://clients2.google.com/service/update2/crx",
+      "ponfpcnoihfmfllpaingbgckeeldkhle;https://clients2.google.com/service/update2/crx",
+      ""
+    ]
+
+
+}

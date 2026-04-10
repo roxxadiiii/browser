@@ -1,0 +1,17 @@
+﻿Base16 Slot,Purpose,Original Storm,New Ultra Dark,Change
+base00,Background,#24283B,`#13141F`,⬇️ Much Darker
+base01,Selection BG,#1A1B26,`#1F202E`,⬇️ Darker
+base02,Status Bar,#343A52,`#2A2B3D`,⬇️ Darker
+base03,Comments,#444B6A,`#565F89`,⬆️ Brighter
+base04,Caret,#787C99,`#787C99`,➖ Same
+base05,Foreground,#787C99,`#C0CAF5`,⬆️ Much Brighter
+base06,Light FG,#CBCCD1,`#D5D6DB`,⬆️ Brighter
+base07,Bright FG,#D5D6DB,`#FFFFFF`,⬆️ Pure White
+base08,Red,#F7768E,`#FF7A93`,⬆️ More Vibrant
+base09,Orange,#FF9E64,`#FF9E64`,➖ Same
+base0A,Yellow,#E0AF68,`#FFD173`,⬆️ Brighter
+base0B,Green,#41A6B5,`#9ECE6A`,⬆️ Much Brighter
+base0C,Cyan,#7DCFFF,`#7FFFD4`,⬆️ Brighter
+base0D,Blue,#7AA2F7,`#89DDFF`,⬆️ Brighter
+base0E,Purple,#BB9AF7,`#C099FF`,⬆️ Brighter
+base0F,Brown,#D18616,`#FF9E64`,⬆️ Brighter

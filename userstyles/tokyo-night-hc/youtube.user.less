@@ -1,0 +1,487 @@
+/* ==UserStyle==
+@name           YouTube Tokyo Night Ultra Dark
+@namespace      github.com/openstyles/stylus
+@version        1.0.0
+@description    Tokyo Night Ultra Dark theme for YouTube with high contrast
+@author         You
+@license        MIT
+@preprocessor   stylus
+@var select     variant "Variant" ["dark*"]
+@var color      bg-dark "Background Dark" #13141F
+@var color      bg-light "Background Light" #1F202E
+@var color      bg-elevated "Elevated BG" #2A2B3D
+@var color      fg-main "Main Foreground" #C0CAF5
+@var color      fg-dim "Dim Foreground" #565F89
+@var color      accent-blue "Blue Accent" #89DDFF
+@var color      accent-purple "Purple Accent" #C099FF
+@var color      accent-green "Green Accent" #9ECE6A
+@var color      accent-yellow "Yellow Accent" #FFD173
+@var color      accent-red "Red Accent" #FF7A93
+@var color      accent-cyan "Cyan Accent" #7FFFD4
+@var color      accent-orange "Orange Accent" #FF9E64
+==/UserStyle== */
+
+@-moz-document domain("youtube.com") {
+  /* ============================================
+     ROOT & BASE
+     ============================================ */
+  html[dark], html[dark] body {
+    background-color: bg-dark !important;
+    color: fg-main !important;
+  }
+
+  /* ============================================
+     HEADER / TOP BAR
+     ============================================ */
+  ytd-masthead {
+    background-color: bg-dark !important;
+    border-bottom: 1px solid bg-elevated !important;
+  }
+
+  #masthead-search-input,
+  #search-input input,
+  #search-form input {
+    background-color: bg-light !important;
+    color: fg-main !important;
+    border: 1px solid bg-elevated !important;
+  }
+
+  #masthead-search-input:focus,
+  #search-input input:focus {
+    border-color: accent-blue !important;
+    background-color: bg-elevated !important;
+  }
+
+  /* Search button */
+  #search-icon-legacy.ytd-searchbox {
+    background-color: bg-elevated !important;
+    border-color: bg-elevated !important;
+  }
+
+  #search-icon-legacy.ytd-searchbox:hover {
+    background-color: bg-light !important;
+  }
+
+  /* Header icons */
+  yt-icon-button svg {
+    fill: fg-main !important;
+  }
+
+  yt-icon-button:hover svg {
+    fill: accent-blue !important;
+  }
+
+  /* ============================================
+     SIDEBAR
+     ============================================ */
+  tp-yt-app-drawer,
+  ytd-mini-guide-renderer,
+  ytd-guide-renderer {
+    background-color: bg-dark !important;
+  }
+
+  /* Sidebar items */
+  ytd-guide-entry-renderer,
+  ytd-mini-guide-entry-renderer {
+    color: fg-main !important;
+  }
+
+  ytd-guide-entry-renderer:hover,
+  ytd-mini-guide-entry-renderer:hover {
+    background-color: bg-light !important;
+    color: accent-blue !important;
+  }
+
+  ytd-guide-entry-renderer[active],
+  ytd-mini-guide-entry-renderer[active] {
+    background-color: bg-elevated !important;
+    color: accent-blue !important;
+  }
+
+  /* Sidebar section titles */
+  ytd-guide-section-renderer h3 {
+    color: fg-dim !important;
+  }
+
+  /* ============================================
+     VIDEO CARDS / THUMBNAILS
+     ============================================ */
+  ytd-video-renderer,
+  ytd-grid-video-renderer,
+  ytd-compact-video-renderer {
+    background-color: transparent !important;
+  }
+
+  /* Video titles */
+  #video-title,
+  .yt-simple-endpoint.style-scope.ytd-video-renderer {
+    color: fg-main !important;
+  }
+
+  #video-title:hover {
+    color: accent-blue !important;
+  }
+
+  /* Channel names */
+  #channel-name,
+  #text.ytd-channel-name a {
+    color: fg-dim !important;
+  }
+
+  #channel-name:hover,
+  #text.ytd-channel-name a:hover {
+    color: accent-purple !important;
+  }
+
+  /* Video metadata (views, time) */
+  #metadata-line,
+  #metadata.ytd-video-meta-block {
+    color: fg-dim !important;
+  }
+
+  /* ============================================
+     VIDEO PLAYER
+     ============================================ */
+  #movie_player,
+  .html5-video-container,
+  video {
+    background-color: #000000 !important;
+  }
+
+  /* Player controls */
+  .ytp-chrome-bottom {
+    background: linear-gradient(transparent, rgba(19, 20, 31, 0.9)) !important;
+  }
+
+  .ytp-chrome-top {
+    background: linear-gradient(rgba(19, 20, 31, 0.9), transparent) !important;
+  }
+
+  /* Progress bar */
+  .ytp-progress-bar {
+    background: bg-elevated !important;
+  }
+
+  .ytp-progress-bar-fill {
+    background: accent-red !important;
+  }
+
+  /* Play button */
+  .ytp-play-button svg {
+    fill: fg-main !important;
+  }
+
+  /* Volume slider */
+  .ytp-volume-slider-handle {
+    fill: accent-blue !important;
+  }
+
+  /* Time display */
+  .ytp-time-display,
+  .ytp-time-current,
+  .ytp-time-separator,
+  .ytp-time-duration {
+    color: fg-main !important;
+  }
+
+  /* Settings menu */
+  .ytp-menuitem {
+    background-color: bg-light !important;
+    color: fg-main !important;
+  }
+
+  .ytp-menuitem:hover {
+    background-color: bg-elevated !important;
+    color: accent-blue !important;
+  }
+
+  /* ============================================
+     COMMENTS SECTION
+     ============================================ */
+  #comments,
+  ytd-comments {
+    background-color: bg-dark !important;
+  }
+
+  #placeholder-area {
+    background-color: bg-light !important;
+    border: 1px solid bg-elevated !important;
+  }
+
+  /* Comment text */
+  #content-text,
+  #contenteditable-root {
+    color: fg-main !important;
+  }
+
+  /* Author names */
+  #author-text,
+  #author-name {
+    color: accent-blue !important;
+  }
+
+  #author-text:hover,
+  #author-name:hover {
+    color: accent-purple !important;
+  }
+
+  /* Comment metadata (time, likes) */
+  #published-time-text,
+  #vote-count-middle {
+    color: fg-dim !important;
+  }
+
+  /* Like/dislike buttons */
+  ytd-toggle-button-renderer svg {
+    fill: fg-dim !important;
+  }
+
+  ytd-toggle-button-renderer:hover svg {
+    fill: accent-blue !important;
+  }
+
+  ytd-toggle-button-renderer[aria-pressed="true"] svg {
+    fill: accent-red !important;
+  }
+
+  /* ============================================
+     WATCH PAGE - INFO
+     ============================================ */
+  #title,
+  #title.ytd-video-primary-info-renderer {
+    color: fg-main !important;
+  }
+
+  /* Owner name */
+  #owner-name a {
+    color: accent-blue !important;
+  }
+
+  #owner-name a:hover {
+    color: accent-purple !important;
+  }
+
+  /* Subscribe button */
+  #subscribe-button ytd-subscribe-button-renderer {
+    background-color: accent-red !important;
+    color: bg-dark !important;
+  }
+
+  #subscribe-button ytd-subscribe-button-renderer:hover {
+    background-color: accent-orange !important;
+  }
+
+  /* Description */
+  #description,
+  #description.ytd-video-secondary-info-renderer {
+    color: fg-main !important;
+  }
+
+  #description-contents,
+  #meta-contents {
+    color: fg-dim !important;
+  }
+
+  /* ============================================
+     CHIPS / TAGS (Above search results)
+     ============================================ */
+  ytd-chip-cloud-renderer,
+  #chips-wrapper {
+    background-color: bg-dark !important;
+  }
+
+  .yt-spec-chip-shape {
+    background-color: bg-light !important;
+    color: fg-main !important;
+    border: 1px solid bg-elevated !important;
+  }
+
+  .yt-spec-chip-shape:hover {
+    background-color: bg-elevated !important;
+    border-color: accent-blue !important;
+    color: accent-blue !important;
+  }
+
+  .yt-spec-chip-shape[aria-selected="true"] {
+    background-color: accent-blue !important;
+    color: bg-dark !important;
+    border-color: accent-blue !important;
+  }
+
+  /* ============================================
+     BUTTONS
+     ============================================ */
+  .yt-spec-button-shape-next--filled {
+    background-color: accent-blue !important;
+    color: bg-dark !important;
+  }
+
+  .yt-spec-button-shape-next--filled:hover {
+    background-color: accent-purple !important;
+  }
+
+  .yt-spec-button-shape-next--tonal {
+    background-color: bg-elevated !important;
+    color: fg-main !important;
+  }
+
+  .yt-spec-button-shape-next--tonal:hover {
+    background-color: bg-light !important;
+    color: accent-blue !important;
+  }
+
+  .yt-spec-button-shape-next--text {
+    color: fg-main !important;
+  }
+
+  .yt-spec-button-shape-next--text:hover {
+    color: accent-blue !important;
+  }
+
+  /* ============================================
+     INPUTS & TEXTAREAS
+     ============================================ */
+  input[type="text"],
+  input[type="search"],
+  textarea,
+  #simplebox-placeholder {
+    background-color: bg-light !important;
+    color: fg-main !important;
+    border: 1px solid bg-elevated !important;
+  }
+
+  input[type="text"]:focus,
+  input[type="search"]:focus,
+  textarea:focus {
+    border-color: accent-blue !important;
+    background-color: bg-elevated !important;
+    outline: none !important;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: fg-dim !important;
+  }
+
+  /* ============================================
+     TOOLTIPS & POPUPS
+     ============================================ */
+  .yt-spec-tooltip,
+  tp-yt-paper-tooltip,
+  #tooltip {
+    background-color: bg-elevated !important;
+    color: fg-main !important;
+    border: 1px solid bg-light !important;
+  }
+
+  /* ============================================
+     SCROLLBARS
+     ============================================ */
+  ::-webkit-scrollbar {
+    width: 10px !important;
+    height: 10px !important;
+    background-color: bg-dark !important;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: bg-dark !important;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: bg-elevated !important;
+    border-radius: 5px !important;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: fg-dim !important;
+  }
+
+  /* Firefox scrollbars */
+  * {
+    scrollbar-width: thin !important;
+    scrollbar-color: bg-elevated bg-dark !important;
+  }
+
+  /* ============================================
+     MISC ELEMENTS
+     ============================================ */
+  /* Divider lines */
+  ytd-divider {
+    border-color: bg-elevated !important;
+  }
+
+  /* Badges (LIVE, NEW, etc) */
+  .yt-spec-badge-shape-background {
+    background-color: accent-red !important;
+    color: bg-dark !important;
+  }
+
+  /* Notification badges */
+  #notification-count {
+    background-color: accent-red !important;
+    color: bg-dark !important;
+  }
+
+  /* Menu items */
+  tp-yt-paper-item,
+  ytd-menu-service-item-renderer {
+    color: fg-main !important;
+  }
+
+  tp-yt-paper-item:hover,
+  ytd-menu-service-item-renderer:hover {
+    background-color: bg-light !important;
+    color: accent-blue !important;
+  }
+
+  /* Dialogs / Modals */
+  tp-yt-paper-dialog,
+  ytd-popup-container {
+    background-color: bg-light !important;
+    color: fg-main !important;
+    border: 1px solid bg-elevated !important;
+  }
+
+  /* Loading skeletons */
+  yt-shimmer {
+    background: linear-gradient(
+      90deg,
+      bg-light 0%,
+      bg-elevated 50%,
+      bg-light 100%
+    ) !important;
+  }
+
+  /* ============================================
+     SHORTS
+     ============================================ */
+  ytd-reel-video-renderer,
+  ytd-shorts {
+    background-color: bg-dark !important;
+  }
+
+  /* ============================================
+     PLAYLIST
+     ============================================ */
+  ytd-playlist-panel-renderer {
+    background-color: bg-light !important;
+  }
+
+  #header.ytd-playlist-panel-renderer {
+    background-color: bg-elevated !important;
+    border-bottom: 1px solid bg-dark !important;
+  }
+
+  /* ============================================
+     ENDSCREEN / CARDS
+     ============================================ */
+  .ytp-ce-element,
+  .ytp-ce-video {
+    background-color: bg-light !important;
+    border: 2px solid bg-elevated !important;
+  }
+
+  .ytp-ce-element:hover {
+    border-color: accent-blue !important;
+  }
+}
